@@ -5,7 +5,7 @@ const app = express();
 dotenv.config();
 app.use(express.json());
 
-app.use('/api/', contactRoutes)
+app.use('/api/contact', contactRoutes)
 const PORT = process.env.PORT || 3001;
 
 app.get('/', (req, res) =>{
