@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import userRoutes from "./routes/userRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
 import { errorHandler } from "./middleware/ErrorHandler.js";
 import connectDB from "./config/db.js";
@@ -9,6 +10,7 @@ dotenv.config();
 app.use(express.json());
 connectDB();
 
+app.use("/api/users", userRoutes );
 app.use("/api/contact", contactRoutes);
 const PORT = process.env.PORT || 3001;
 
